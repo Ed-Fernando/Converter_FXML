@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * Copyright (c) 2016 Edilbert Fernando. All rights reserved.
+ * 
+ * This file is licensed under the 3-Clause BSD/New BSD license.
+ *
+ * The terms of the license can be found in the "License.txt" file provided.
+-->
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="240.0" prefWidth="320.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="converter.ConversionPanel">
+    <stylesheets>
+        <URL value="@conversionpanel.css" />
+    </stylesheets>
+    <children>        
+        <VBox fx:id="masterContainer" alignment="TOP_CENTER" prefHeight="240.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TitledPane fx:id="metricTitle" animated="false" collapsible="false" expanded="false" mouseTransparent="true" text="Metric System" />  
+            <HBox fx:id="metricContainer" fillHeight="false">
+                <VBox>
+                    <TextField fx:id="metricTextField" layoutX="126" layoutY="120" minHeight="15.0" minWidth="50.0">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin></TextField>
+                    <Slider fx:id="metricSlider">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+                  <padding>
+                     <Insets top="5.0" />
+                  </padding></Slider> 
+                </VBox>
+                <ComboBox fx:id="metricComboBox" minWidth="130.0">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin></ComboBox>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding> 
+            </HBox>
+            <TitledPane fx:id="usaTitle" animated="false" collapsible="false" expanded="false" mouseTransparent="true" text="U.S. System">
+            <VBox.margin>
+               <Insets bottom="5.0" />
+            </VBox.margin></TitledPane>  
+            <HBox fx:id="usaContainer" fillHeight="false">
+                <VBox>
+                    <TextField fx:id="usaTextField" layoutX="126" layoutY="120" minHeight="15.0" minWidth="50.0" />
+                    <Slider fx:id="usaSlider">
+                  <padding>
+                     <Insets top="5.0" />
+                  </padding></Slider> 
+                </VBox>
+                <ComboBox fx:id="usaComboBox" minWidth="130.0">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin></ComboBox>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding> 
+            </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+            <children>
+               <RadioButton fx:id="toggleCaspian" mnemonicParsing="false" onAction="#toggleCaspianTheme" text="Caspian">
+                  <HBox.margin>
+                     <Insets right="10.0" />
+                  </HBox.margin>
+               </RadioButton>
+               <RadioButton fx:id="toggleModena" mnemonicParsing="false" onAction="#toggleModenaTheme" selected="true" text="Modena">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin>
+               </RadioButton>
+            </children>
+         </HBox>             
+        </VBox>
+    </children>
+</AnchorPane>
