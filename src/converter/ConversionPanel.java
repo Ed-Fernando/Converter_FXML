@@ -50,26 +50,16 @@ public class ConversionPanel {
             default :
                         break;
         }
-    }
+    }    
     
     @FXML
-    private void toggleCaspianTheme() {
-        if(toggleModena.isSelected()) {
-            toggleModena.setSelected(false);
+    private void toggleTheme() {
+        if(toggleCaspian.isSelected() && !toggleModena.isSelected()) {
             Converter.setUserAgentStylesheet(Converter.STYLESHEET_CASPIAN);
         }
-        else
-            toggleCaspian.setSelected(true);
-    }
-    
-    @FXML
-    private void toggleModenaTheme() {
-        if(toggleCaspian.isSelected()) {
-            toggleCaspian.setSelected(false);
+        else {
             Converter.setUserAgentStylesheet(Converter.STYLESHEET_MODENA);
-        }
-        else
-            toggleModena.setSelected(true);
+        }        
     }
     
     private final class GenericConversionPanel {

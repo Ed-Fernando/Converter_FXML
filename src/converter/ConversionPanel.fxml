@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 
- * Copyright (c) 2016 Edilbert Fernando. All rights reserved.
- * 
- * This file is licensed under the 3-Clause BSD/New BSD license.
- *
- * The terms of the license can be found in the "License.txt" file provided.
--->
-
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
@@ -16,6 +8,7 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -26,7 +19,7 @@
     </stylesheets>
     <children>        
         <VBox fx:id="masterContainer" alignment="TOP_CENTER" prefHeight="240.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <TitledPane fx:id="metricTitle" animated="false" collapsible="false" expanded="false" mouseTransparent="true" text="Metric System" />  
+            <TitledPane fx:id="metricTitle" styleClass="boldTitle" animated="false" collapsible="false" expanded="false" mouseTransparent="true" text="Metric System" />  
             <HBox fx:id="metricContainer" fillHeight="false">
                 <VBox>
                     <TextField fx:id="metricTextField" layoutX="126" layoutY="120" minHeight="15.0" minWidth="50.0">
@@ -49,7 +42,7 @@
                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </padding> 
             </HBox>
-            <TitledPane fx:id="usaTitle" animated="false" collapsible="false" expanded="false" mouseTransparent="true" text="U.S. System">
+            <TitledPane fx:id="usaTitle" styleClass="boldTitle" animated="false" collapsible="false" expanded="false" mouseTransparent="true" text="U.S. System">
             <VBox.margin>
                <Insets bottom="5.0" />
             </VBox.margin></TitledPane>  
@@ -72,12 +65,15 @@
          <Separator prefWidth="200.0" />
          <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
             <children>
-               <RadioButton fx:id="toggleCaspian" mnemonicParsing="false" onAction="#toggleCaspianTheme" text="Caspian">
+               <RadioButton fx:id="toggleCaspian" mnemonicParsing="false" onAction="#toggleTheme" text="Caspian">
                   <HBox.margin>
                      <Insets right="10.0" />
                   </HBox.margin>
+                  <toggleGroup>
+                     <ToggleGroup fx:id="ThemeSelector" />
+                  </toggleGroup>
                </RadioButton>
-               <RadioButton fx:id="toggleModena" mnemonicParsing="false" onAction="#toggleModenaTheme" selected="true" text="Modena">
+               <RadioButton fx:id="toggleModena" mnemonicParsing="false" onAction="#toggleTheme" selected="true" text="Modena" toggleGroup="$ThemeSelector">
                   <HBox.margin>
                      <Insets left="10.0" />
                   </HBox.margin>

@@ -9,3 +9,7 @@
 .mainFxmlClass {
 
 }
+
+.boldTitle {
+    -fx-font-weight: bold;
+}
